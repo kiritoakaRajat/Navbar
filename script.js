@@ -1,12 +1,18 @@
-const toggleBtn = document.querySelector(".toggle_btn")
-const toggleBtnIcon = document.querySelector(".toggle_btn i")
-const dropDownMenu = document.querySelector(".dropdown_menu")
+// JavaScript for navigation effect on scroll
+window.addEventListener("scroll", function () {
+  var header = document.querySelector("header");
+  header.classList.toggle('sticky', window.scrollY > 0);
+});
 
-toggleBtn.onclick = function () {
-  dropDownMenu.classList.toggle("open")
-  const isOpen = dropDownMenu.classList.contains("open")
+// JavaScript for responsive sidebar
+var menu = document.querySelector('.menu');
+var menubtn = document.querySelector('.menu-btn'); 
+var closebtn = document.querySelector('.close-btn'); 
 
-  toggleBtnIcon.classList = isOpen 
-    ? "fa-solid fa-xmark" : 
-  "fa-solid fa-bars";
-}
+menubtn.addEventListener("click", () => {
+  menu.classList.add('active');
+});
+
+closebtn.addEventListener("click", () => {
+  menu.classList.remove('active');
+});
